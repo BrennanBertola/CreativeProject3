@@ -7,6 +7,7 @@ Vue.config.productionTip = false
 import mock from './mock-data.js'
 
 let data = {
+  isEmpty: true,
   products: mock,
   cart: [],
 }

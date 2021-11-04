@@ -1,19 +1,24 @@
 <template>
 <div>
-  <h1>Alter component, make similar to ProductList.vue but removes instead, add message when cart is empty</h1>
   <h1>Shopping Cart</h1>
-  <ProductList :products="products" />
+  <div v-if="this.$root.$data.isEmpty">
+    <h2>Cart Is Empty</h2>
+  </div>
+
+  <div v-else>
+    <CartList :products="products" />
+  </div>
 </div>
 </template>
 
 
 
 <script>
-import ProductList from "../components/ProductList.vue"
+import CartList from "../components/CartList.vue"
 export default {
   name: 'Cart',
   components: {
-    ProductList
+    CartList
   },
   data() {
     return {

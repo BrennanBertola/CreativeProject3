@@ -13,7 +13,7 @@
       </div>
       <div class="price">
         <h2>{{product.price}}</h2>
-        <button v-on:click="addToCart(product)" class="auto">Add to Cart</button>
+        <button v-on:click="remove(product)" class="auto">Remove</button>
       </div>
     </div>
   </div>
@@ -27,9 +27,16 @@ export default {
     products: Array
   },
   methods: {
-    addToCart(product) {
-      this.$root.$data.cart.push(product);
-      this.$root.$data.isEmpty = false;
+    remove(product) {
+      for (var i = 0; i < this.$root.$data.cart.length; ++i) {
+        if (this.$root.$data.cart[i] === product) {
+          this.$root.$data.cart.splice(i, 1);
+          if (this.$root.$data.cart.length === 0) {
+            this.$root.$data.isEmpty = true;
+          }
+          break;
+        }
+      }
     }
   }
 }

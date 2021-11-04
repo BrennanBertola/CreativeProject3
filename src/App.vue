@@ -9,13 +9,13 @@
     <div id="side">
       <router-link to="/browse">
         <div class="menu-item browse">
-          <img src="/images/globe.png">
+          <img src="/images/browse.png">
           <p>Browse</p>
         </div>
       </router-link>
       <router-link to="/cart">
         <div class="menu-item">
-          <img src="/images/love.png">
+          <img src="/images/cart.png">
           <p>{{numItems}} items</p>
         </div>
       </router-link>
@@ -42,8 +42,12 @@ export default {
 }
 
 body {
-  margin: 50px 100px;
 
+  background-color: #f7f7f7;
+}
+
+#app {
+  margin: 50px 100px;
 }
 
 #menu {
